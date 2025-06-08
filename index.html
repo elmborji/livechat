@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Marketing - 3CX Intégré</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      color: #003366;
+      margin-bottom: 20px;
+    }
+
+    .btn-contact {
+      padding: 15px 30px;
+      font-size: 18px;
+      background-color: #0078d4;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .btn-contact:hover {
+      background-color: #005fa3;
+    }
+
+    .note {
+      margin-top: 40px;
+      color: #666;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Besoin de contacter notre équipe Marketing ?</h1>
+  <button class="btn-contact" onclick="open3CXChat()">Contacter Marketing</button>
+
+  <div class="note">
+    Le widget 3CX doit être activé et correctement configuré sur votre serveur.
+  </div>
+
+  <!-- Script Live Chat 3CX -->
+  <script id="3cxchat" async defer src="https://borji.3cx.be:5001/livechat/scripts/3cx-livechat.js"></script>
+
+  <!-- Ouverture manuelle du widget 3CX -->
+  <script>
+    function open3CXChat() {
+      if (typeof window.parent['3CXLiveChat'] !== 'undefined') {
+        window.parent['3CXLiveChat'].openChat();
+      } else {
+        alert("Le chat n'est pas encore chargé. Réessayez dans quelques secondes.");
+      }
+    }
+  </script>
+
+</body>
+</html>
