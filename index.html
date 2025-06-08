@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta charset="UTF-8">
   <title>Contact Marketing - 3CX Intégré</title>
@@ -44,26 +44,64 @@
 </head>
 <body>
 
-  <h1>Besoin de contacter notre équipe Marketing ?</h1>
-  <button class="btn-contact" onclick="open3CXChat()">Contacter Marketing</button>
+    <h1>Besoin de contacter notre équipe Marketing ?</h1>
+    <button class="btn-contact" onclick="open3CXChat()">Contacter Marketing</button>
 
-  <div class="note">
-    Le widget 3CX doit être activé et correctement configuré sur votre serveur.
-  </div>
+    <div class="note">
+        Le widget 3CX doit être activé et correctement configuré sur votre serveur.
+    </div>
 
-  <!-- Script Live Chat 3CX -->
-  <script id="3cxchat" async defer src="https://borji.3cx.be:5001/livechat/scripts/3cx-livechat.js"></script>
+    <!-- Script Live Chat 3CX -->
+    <script id="3cxchat" async defer src="https://borji.3cx.be:5001/livechat/scripts/3cx-livechat.js"></script>
 
-  <!-- Ouverture manuelle du widget 3CX -->
-  <script>
-    function open3CXChat() {
-      if (typeof window.parent['3CXLiveChat'] !== 'undefined') {
-        window.parent['3CXLiveChat'].openChat();
-      } else {
-        alert("Le chat n'est pas encore chargé. Réessayez dans quelques secondes.");
-      }
-    }
-  </script>
+
+    <!-- Ouverture manuelle du widget 3CX -->
+    <script>
+        function open3CXChat() {
+            if (typeof window.parent['3CXLiveChat'] !== 'undefined') {
+                window.parent['3CXLiveChat'].openChat();
+            } else {
+                alert("Le chat n'est pas encore chargé. Réessayez dans quelques secondes.");
+            }
+        }
+    </script>
+
+    <!--Use the below code snippet to provide real time updates to the live chat plugin without the need of copying and paste each time to your website when changes are made via PBX-->
+    <call-us-selector phonesystem-url="https://borji.3cx.be" party="LiveChat512341"></call-us-selector>
+
+    <!--Incase you don't want real time updates to the live chat plugin when options are changed, use the below code snippet. Please note that each time you change the settings you will need to copy and paste the snippet code to your website-->
+    <!--<call-us
+    phonesystem-url="https://borji.3cx.be"
+    style="position:fixed;font-size:16px;line-height:17px;z-index: 99999;right: 0; bottom: 0;"
+    id="wp-live-chat-by-3CX"
+    minimized="true"
+    animation-style="noanimation"
+    party="LiveChat512341"
+    minimized-style="bubbleright"
+    allow-call="true"
+    allow-video="false"
+    allow-soundnotifications="true"
+    enable-mute="true"
+    enable-onmobile="true"
+    offline-enabled="true"
+    enable="true"
+    ignore-queueownership="false"
+    authentication="both"
+    show-operator-actual-name="true"
+    aknowledge-received="true"
+    gdpr-enabled="false"
+    message-userinfo-format="both"
+    message-dateformat="both"
+    lang="browser"
+    button-icon-type="default"
+    greeting-visibility="none"
+    greeting-offline-visibility="none"
+    chat-delay="2000"
+    enable-direct-call="true"
+    enable-ga="false"
+    ></call-us>-->
+    <script defer src="https://downloads-global.3cx.com/downloads/livechatandtalk/v1/callus.js" id="tcx-callus-js" charset="utf-8"></script>
+
 
 </body>
 </html>
